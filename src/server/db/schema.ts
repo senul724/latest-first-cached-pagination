@@ -7,7 +7,7 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
-export const createTable = pgTableCreator((name) => `desc_pagination_${name}`);
+export const createTable = pgTableCreator((name) => `pm_${name}`);
 
 export const posts = createTable(
   "verse",
