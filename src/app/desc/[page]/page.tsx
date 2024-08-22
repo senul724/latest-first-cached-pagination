@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { db } from "~/server/db";
-import { getTotalPages, pageLimitAndOffset } from "~/utils/pages";
+import { pageLimitAndOffset } from "~/utils/pages";
 
 export default async function ViewDialogues({
   params,
@@ -44,20 +44,4 @@ export default async function ViewDialogues({
       </div>
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  const { pages, err } = await getTotalPages();
-
-  const paths: { page: string }[] = [];
-
-  if (err) {
-    return paths;
-  }
-
-  for (let i = 1; i <= pages; i++) {
-    paths.push({ page: String(i) });
-  }
-
-  return paths;
 }
