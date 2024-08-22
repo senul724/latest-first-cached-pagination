@@ -15,7 +15,6 @@ export async function addContent(
 
   const records = await redis.incr("records");
   const newPageTotal = calculatePageCount(records);
-  console.log(JSON.stringify({ newPageTotal, totalPages:totalPages??"no" }));
 
   revalidatePath(`/desc/${totalPages}`);
 
