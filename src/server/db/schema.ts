@@ -9,7 +9,7 @@ import {
 
 export const createTable = pgTableCreator((name) => `pm_${name}`);
 
-export const posts = createTable(
+export const dialouges = createTable(
   "verse",
   {
     id: serial("id").primaryKey(),
