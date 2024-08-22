@@ -28,7 +28,7 @@ export default async function ViewDialogues({
         {dialogueList.map((el, idx) => (
           <div
             className="w-3/4 flex flex-col items-center justify-center rounded-xl shadow border p-2"
-            id={String(idx)}
+            key={String(idx)}
           >
             <p className="text-lg text-center font-semibold text-gray-600">
               {el.content}
