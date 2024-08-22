@@ -27,18 +27,23 @@ export default async function ViewDialogues({
       <div className="w-full flex flex-col items-center justify-center gap-1">
         {dialogueList.map((el, idx) => (
           <div
-            className="w-3/4 flex flex-col items-center justify-center rounded-xl shadow border p-2"
+            className="flex flex-col w-3/4 leading-1.5 p-4 rounded-e-xl rounded-es-xl bg-gray-700"
             key={String(idx)}
           >
-            <p className="text-lg text-center font-semibold text-gray-600">
+            <div className="flex items-center space-x-2 rtl:space-x-reverse">
+              <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                {el.createdBy}
+              </span>
+              <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                {el.createdAt.toDateString()}
+              </span>
+            </div>
+            <p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
               {el.content}
             </p>
-            <div className="flex items-center justify-center w-full">
-              <p className="w-1/2 px-2">by {el.createdBy}</p>
-              <p className="w-1/2 px-2 text-right">
-                {el.createdAt.toDateString()}: {el.id}
-              </p>
-            </div>
+            <span className="text-sm font-normal text-gray-500 dark:text-gray-400 text-right -m-2">
+              Msg no: {el.id}
+            </span>
           </div>
         ))}
       </div>

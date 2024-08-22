@@ -44,7 +44,7 @@ export default function AddVerse(props: { totalPages: number }) {
   };
   return (
     <div className="flex items-center justify-center w-full">
-      <div className="flex flex-col items-center justify-center w-5/6 border shadow-xl rounded-xl p-5 gap-5 bg-blue-100">
+      <div className="flex flex-col items-center justify-center w-5/6 border shadow-xl rounded-xl p-5 gap-5 bg-gray-200">
         <label className="text-xl font-semibold text-gray-800">
           Keep the conversation going!
         </label>
